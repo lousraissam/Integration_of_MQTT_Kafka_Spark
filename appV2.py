@@ -132,8 +132,8 @@ def classify(model, my_data):
 
 def set_influx():
     # You can generate an API token from the "API Tokens Tab" in the UI
-     token = "lfKYykGn6ZCmaGhG-Y3FOkjSJi5wMXRWK7F5vV-YLegKPXu3G9HtPJqYhAI-rpBvCAHEYIJRcEEqwee3OaWGPw=="
-     org = "esi-sna"
+     token = "sckl3vA--7KYKuYH-DHY2omq1LTiX8q-Y1svgtJ-hI85ozl2YRbvjOxdLP1WTr8gJafvpbjj08Ljg4C0H9ONRA=="
+     org = "esi-sba"
      url = "http://localhost:8086"
 
      client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
@@ -151,7 +151,7 @@ def loadTo_influx(values):
       .tag("host", "host1")
       .field("value", values)
     )
-    write_api.write(bucket=bucket, org="esi-sna", record=point)
+    write_api.write(bucket=bucket, org="esi-sba", record=point)
     client.close()
 # def loadTo_influx(values):
 #     #tokens-----------------------------------------------------------------------
